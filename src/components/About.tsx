@@ -23,9 +23,13 @@ export default function About() {
 
           <div className="edu-card">
             <h3><span className="dot" /> Education</h3>
-            <p className="degree">{portfolioData.education.degree}</p>
-            <p className="institution">{portfolioData.education.institution}</p>
-            <p className="duration">{portfolioData.education.duration}</p>
+            {portfolioData.education.map((edu, idx) => (
+              <div key={idx} style={{ marginTop: idx > 0 ? 16 : 8 }}>
+                <p className="degree">{edu.degree}</p>
+                <p className="institution">{edu.institution}</p>
+                <p className="duration">{edu.duration}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

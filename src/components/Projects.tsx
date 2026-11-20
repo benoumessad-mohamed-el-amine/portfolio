@@ -2,6 +2,14 @@ import { motion } from "framer-motion";
 import { portfolioData } from "../lib/data";
 import SectionHeading from "./SectionHeading";
 
+interface ProjectItem {
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  status?: string;
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="section section-alt">
@@ -9,7 +17,7 @@ export default function Projects() {
         <SectionHeading number="04" title="Recent Software Projects" />
 
         <div className="projects-grid">
-          {portfolioData.projects.map((p, i) => (
+          {(portfolioData.projects as ProjectItem[]).map((p, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
