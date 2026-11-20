@@ -8,7 +8,7 @@ export default function AiResearch() {
       <div className="container">
         <SectionHeading
           number="05"
-          title="Recent AI Research & Deep Learning"
+          title="Recent Competitions & Hackathons"
         />
 
         <div className="research-grid">
@@ -22,7 +22,7 @@ export default function AiResearch() {
               className="project-card"
             >
               <div className="project-top">
-                <FlaskIcon />
+                <TrophyIcon />
                 {p.link && (
                   <a href={p.link} target="_blank" rel="noopener noreferrer">
                     <ExternalIcon />
@@ -66,7 +66,7 @@ function ExternalIcon() {
   );
 }
 
-function FlaskIcon() {
+function TrophyIcon() {
   return (
     <svg
       width="28"
@@ -79,9 +79,11 @@ function FlaskIcon() {
       strokeLinejoin="round"
       style={{ marginBottom: 16 }}
     >
-      <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" />
-      <path d="M6.453 15h11.094" />
-      <path d="M8.5 2h7" />
+      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+      <path d="M4 22h16" />
+      <path d="M10 14.66V17c0 .55-.45 1-1 1H7v2h10v-2h-2c-.55 0-1-.45-1-1v-2.34" />
+      <path d="M6 4h12a2 2 0 0 1 2 2v3.5a6 6 0 0 1-6 6h0a6 6 0 0 1-6-6V6a2 2 0 0 1 2-2Z" />
     </svg>
   );
 }

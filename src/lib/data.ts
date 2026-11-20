@@ -21,7 +21,7 @@ export const portfolioData = {
     {
       degree: "Bachelor's in Computer Science (Information Systems)",
       institution: "M'Hamed Bougara University of Boumerdès (UMBB)",
-      duration: "2022 – 2026",
+      duration: "2023 – 2026",
     },
   ],
   experience: [
