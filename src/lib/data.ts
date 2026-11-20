@@ -5,7 +5,7 @@ export const portfolioData = {
   phone: "+213 775 056 465",
   location: "Boumerdès, Algeria",
   socials: {
-    linkedin: "benoumessad-mohamed-el-amine",
+    linkedin: "benoumessad-mohamed-el-amine-6a3285302",
     github: "benoumessad-mohamed-el-amine",
   },
   about: [
