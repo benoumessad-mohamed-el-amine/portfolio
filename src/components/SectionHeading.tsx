@@ -8,8 +8,8 @@ interface Props {
 export default function SectionHeading({ number, title }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       style={{
@@ -17,6 +17,7 @@ export default function SectionHeading({ number, title }: Props) {
         alignItems: "center",
         gap: "16px",
         marginBottom: "48px",
+        flexWrap: "wrap",
       }}
     >
       <span className="section-num">{number}</span>

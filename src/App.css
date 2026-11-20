@@ -11,7 +11,7 @@
   padding: 24px;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-content { position: relative; z-index: 1; max-width: 800px; width: 100%; }
 .hero-badge {
   display: inline-block;
   padding: 6px 18px;
@@ -22,13 +22,19 @@
   border: 1px solid rgba(249,115,22,0.2);
   border-radius: 100px;
   margin-bottom: 24px;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 16px;
   letter-spacing: -1px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .hero h1 .gradient-text {
   background: linear-gradient(135deg, #ef4444, #f97316, #dc2626);
@@ -129,9 +135,10 @@
   100% { transform: translateY(-100px) scale(0); opacity: 0; }
 }
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: var(--text-secondary);
   margin-bottom: 32px;
+  word-break: break-word;
 }
 .hero-socials { display: flex; gap: 16px; justify-content: center; margin-bottom: 48px; }
 .hero-socials a {
@@ -186,9 +193,9 @@
 .section { padding: 100px 0; }
 .section-alt { background: rgba(24,24,27,0.3); }
 
-.section-num { font-family: 'Fira Code', monospace; font-size: 14px; font-weight: 500; color: var(--accent-light); white-space: nowrap; }
-.section-line { height: 1px; flex: 1; background: var(--border); }
-.section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; white-space: nowrap; }
+.section-num { font-family: 'Fira Code', monospace; font-size: 14px; font-weight: 500; color: var(--accent-light); white-space: nowrap; flex-shrink: 0; }
+.section-line { height: 1px; flex: 1; background: var(--border); min-width: 12px; }
+.section-title { font-size: clamp(1.25rem, 3.5vw, 2rem); font-weight: 700; white-space: normal; word-break: break-word; }
 .dot { display: inline-block; width: 6px; height: 6px; background: var(--accent-light); border-radius: 50%; margin-right: 8px; }
 
 /* ===== ABOUT ===== */
@@ -362,10 +369,10 @@
 .attribution .line { width: 32px; height: 1px; background: var(--border-hover); }
 
 /* ===== CONTACT ===== */
-.contact-inner { max-width: 500px; margin: 0 auto; text-align: center; }
+.contact-inner { max-width: 500px; width: 100%; margin: 0 auto; text-align: center; }
 .contact-intro { color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; }
 .contact-intro .highlight { color: var(--accent-light); font-weight: 500; }
-.contact-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.contact-links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; width: 100%; }
 .contact-link {
   display: flex;
   align-items: center;
@@ -379,6 +386,9 @@
   text-decoration: none;
   font-size: 15px;
   transition: all 0.3s ease;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
 }
 .contact-link:hover { border-color: rgba(16,185,129,0.3); background: rgba(24,24,27,0.8); color: var(--text); }
 .contact-row { display: flex; gap: 12px; }
@@ -412,12 +422,35 @@
 .back-top:hover { color: var(--accent-light); border-color: rgba(16,185,129,0.5); }
 
 /* ===== RESPONSIVE ===== */
+.project-card, .timeline-card, .edu-card, .skill-card, .lang-item, .philosophy-card {
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+}
+
 @media (max-width: 768px) {
+  .hero { padding: 48px 16px; min-height: 90vh; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
   .contact-row { flex-direction: column; }
   .section { padding: 60px 0; }
-  .philosophy-card { padding: 32px 24px; }
+  .philosophy-card { padding: 32px 16px; }
+  .timeline-item { padding-left: 24px; }
+  .timeline-card { padding: 18px 16px; }
+  .project-card { padding: 20px 16px; }
+  .skill-card { padding: 20px 16px; }
+  .hero-socials { gap: 12px; }
+  .hero-socials a { width: 44px; height: 44px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 44px 0; }
+  .hero { padding: 36px 12px; }
+  .timeline-item { padding-left: 20px; }
+  .timeline-card { padding: 16px 12px; }
+  .project-card { padding: 16px 14px; }
+  .skill-card { padding: 16px 14px; }
+  .philosophy-card { padding: 24px 14px; }
 }
